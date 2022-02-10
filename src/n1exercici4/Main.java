@@ -18,7 +18,7 @@ public class Main {
 			
 			System.out.println(examinaUserName(userName));
 			
-		} catch(Exception e) {
+		} catch(ShortUserNameException e) {
 			
 			e.printStackTrace();
 			
@@ -26,13 +26,13 @@ public class Main {
 		
 	}
 	
-	public static String examinaUserName(String userName) throws ShortUserNameError {
+	public static String examinaUserName(String userName) throws ShortUserNameException {
 		
 		String respuesta = "";
 		
 		if(userName.length() < 6) {
 					
-			throw new ShortUserNameError("El nombre de usuario debe tener más de 6 caracteres.");
+			throw new ShortUserNameException("El nombre de usuario debe tener más de 6 caracteres.");
 			
 		} else {
 			
